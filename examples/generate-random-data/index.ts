@@ -4,6 +4,7 @@ import { Client } from "@notionhq/client"
 
 import * as _ from "lodash"
 
+
 import { config } from "dotenv"
 config()
 
@@ -315,7 +316,7 @@ async function main() {
   // Find the first database this bot has access to
   // TODO(blackmad): move to notion.search()
   const databases = await notion.databases.list({})
-
+  
   if (databases.results.length === 0) {
     throw new Error("This bot doesn't have access to any databases!")
   }
